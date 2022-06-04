@@ -37,6 +37,10 @@ public class Order {
         return nbOrders;
     }
 
+    public static int decreaseNumberOfOrders() {
+        return nbOrders--;
+    }
+
     public int getQtyOrdered () {
         return this.qtyOrdered;
     }
@@ -47,6 +51,15 @@ public class Order {
 
     public Media getMedia(int index) {
         return itemsOrdered.get(index);
+    }
+
+    public Media getMedia(Media media) {
+        for (Media m: itemsOrdered) {
+            if (m.getId().equals(media.getId())) {
+                return m;
+            }
+        }
+        return null;
     }
 
     public void addMedia(Media media) {
@@ -70,6 +83,7 @@ public class Order {
         if (qtyOrdered == 0) {
             System.out.println("Empty media list!");
         } else {
+            //float removeCost = media.getCost();
             itemsOrdered.remove(media);
             qtyOrdered--;
             System.out.println("Removed [" + media.getTitle() + "] successfully!");

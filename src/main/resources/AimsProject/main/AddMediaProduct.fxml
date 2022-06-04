@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="542.0" prefWidth="903.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AimsProject.main.AddMediaProduct">
@@ -20,11 +21,13 @@
       <Button layoutX="812.0" layoutY="79.0" mnemonicParsing="false" onAction="#addCD" text="Add" />
       <Button layoutX="812.0" layoutY="136.0" mnemonicParsing="false" onAction="#addDVD" text="Add" />
       <Label layoutX="647.0" layoutY="196.0" text="Add a new Book" />
-      <Button layoutX="812.0" layoutY="192.0" mnemonicParsing="false" text="Add" />
+      <Button layoutX="812.0" layoutY="192.0" mnemonicParsing="false" onAction="#addBook" text="Add" />
       <Label layoutX="647.0" layoutY="140.0" text="Add a new DVD" />
       <Button fx:id="Back" layoutX="811.0" layoutY="457.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
-      <Button layoutX="723.0" layoutY="457.0" mnemonicParsing="false" text="Delete" />
-      <Button layoutX="807.0" layoutY="252.0" mnemonicParsing="false" text="Detail" />
+      <Button layoutX="723.0" layoutY="457.0" mnemonicParsing="false" onAction="#deleteProduct" text="Delete" />
+      <Button layoutX="807.0" layoutY="252.0" mnemonicParsing="false" onAction="#showProductDetail" text="Detail" />
       <Label layoutX="645.0" layoutY="256.0" text="Product's detail" />
+      <TextField fx:id="totalCost" editable="false" layoutX="768.0" layoutY="307.0" prefHeight="26.0" prefWidth="87.0" />
+      <Button layoutX="645.0" layoutY="307.0" mnemonicParsing="false" onAction="#showTotalCost" text="Total cost" />
    </children>
 </AnchorPane>

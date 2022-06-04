@@ -17,22 +17,17 @@
    <children>
       <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="698.0">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" onAction="#showTotalCost" text="Utils">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem mnemonicParsing="false" text="Total Cost" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" text="AIMS Help" />
+              <MenuItem mnemonicParsing="false" onAction="#showAIMSHelp" text="AIMS Help" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="About AIMS" />
-                  <MenuItem mnemonicParsing="false" text="About Me" />
+                  <MenuItem mnemonicParsing="false" onAction="#showAboutAIMS" text="About AIMS" />
+                  <MenuItem mnemonicParsing="false" onAction="#showGitHubProfile" text="About Me" />
             </items>
           </Menu>
         </menus>
@@ -42,7 +37,7 @@
             <Font size="28.0" />
          </font>
       </Label>
-      <VBox layoutX="32.0" layoutY="142.0" prefHeight="278.0" prefWidth="307.0">
+      <VBox layoutX="32.0" layoutY="142.0" prefHeight="196.0" prefWidth="307.0">
          <children>
             <ToolBar prefHeight="40.0" prefWidth="200.0">
               <items>
@@ -66,17 +61,7 @@
             </ToolBar>
             <ToolBar prefHeight="40.0" prefWidth="200.0">
               <items>
-                <Button mnemonicParsing="false" text="3" />
-                  <Label prefHeight="26.0" prefWidth="198.0" text="Delete item ordered by ID">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-              </items>
-            </ToolBar>
-            <ToolBar prefHeight="40.0" prefWidth="200.0">
-              <items>
-                <Button mnemonicParsing="false" text="4" />
+                <Button mnemonicParsing="false" onAction="#deleteAnOrder" text="3" />
                   <Label prefHeight="26.0" prefWidth="223.0" text="Delete an order">
                      <font>
                         <Font size="16.0" />
@@ -86,7 +71,7 @@
             </ToolBar>
             <ToolBar prefHeight="40.0" prefWidth="200.0">
               <items>
-                <Button mnemonicParsing="false" text="5" />
+                <Button mnemonicParsing="false" onAction="#showAllProductsOfOrder" text="4" />
                   <Label prefHeight="26.0" prefWidth="239.0" text="Display the items list of an order">
                      <font>
                         <Font size="16.0" />
@@ -95,18 +80,8 @@
               </items>
             </ToolBar>
             <ToolBar prefHeight="40.0" prefWidth="200.0">
-              <items>
-                <Button mnemonicParsing="false" text="6" />
-                  <Label prefHeight="26.0" prefWidth="202.0" text="Search media product">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-              </items>
-            </ToolBar>
-            <ToolBar prefHeight="40.0" prefWidth="200.0">
                <items>
-                  <Button mnemonicParsing="false" text="7" />
+                  <Button mnemonicParsing="false" onAction="#getALuckyItem" text="5" />
                   <Label prefHeight="26.0" prefWidth="223.0" text="Get a lucky item">
                      <font>
                         <Font size="16.0" />
@@ -116,8 +91,8 @@
             </ToolBar>
          </children>
       </VBox>
-      <Button layoutX="576.0" layoutY="367.0" mnemonicParsing="false" text="Make payment" />
-      <Button layoutX="576.0" layoutY="412.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="95.0" text="Reset" />
+      <Button layoutX="576.0" layoutY="367.0" mnemonicParsing="false" onAction="#makePayment" text="Make payment" />
+      <Button layoutX="576.0" layoutY="412.0" mnemonicParsing="false" onAction="#quit" prefHeight="26.0" prefWidth="95.0" text="Quit" />
       <ImageView fitHeight="207.0" fitWidth="307.0" layoutX="364.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@PRImage.jpg" />

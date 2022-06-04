@@ -16,6 +16,10 @@ public class Book extends Media {
     private List<String> contentTokens = new ArrayList<String>();
     private Map<String, Integer> wordFrequency = new TreeMap<String, Integer>();
 
+    public Book() {
+        super("", "", "", 0.0f);
+    }
+
     public Book(String id, String title, String category, float cost, List<String> authors) {
         super(id, title, category, cost);
         //this.title = title;
