@@ -13,7 +13,7 @@ public class Aims extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Aims.class.getResource("AimsMainGUIController.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
-        stage.setTitle("An Internet Media Store(AIMS)");
+        stage.setTitle("An Internet Media Store 1.0(AIMS 1.0)");
         stage.setScene(scene);
         stage.show();
     }

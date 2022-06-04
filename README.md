@@ -27,6 +27,6 @@ AIMS-Project is a JavaFX application that illustrate how you to buy and sell med
 + Make payment for media products
 + Visit my GitHub profile :>>>
 
-## One more last word
-+ This application is still in development. I'll fully develop this application in the future. I'm also happy to receive any feedback from you guys.
-+ Thank you so much for your support!
+## One More Last Word
++ This application is still in development. I'll fully develop this application and also make a specific document for this application in the future. I'm also happy to receive any feedback from you guys.
++ Thank you so much for your support! And now, enjoy your time!
