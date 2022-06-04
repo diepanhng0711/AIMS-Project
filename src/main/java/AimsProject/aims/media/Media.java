@@ -4,7 +4,7 @@ import AimsProject.aims.disc.*;
 import AimsProject.aims.media.*;
 import AimsProject.aims.disc.track.*;
 
-public abstract class Media implements Comparable<Media> {
+public class Media implements Comparable<Media> {
     private String id;
     private String title;
     private String category;
@@ -22,17 +22,17 @@ public abstract class Media implements Comparable<Media> {
         return this.title;
     }
 
-    /*public void setTitle(String title) {
+    public void setTitle(String title) {
         this.title = title;
-    }*/
+    }
 
     public String getCategory() {
         return this.category;
     }
 
-    /*public void setCategory(String category) {
+    public void setCategory(String category) {
         this.category = category;
-    }*/
+    }
 
     public float getCost() {
         return this.cost;
@@ -46,9 +46,9 @@ public abstract class Media implements Comparable<Media> {
         return this.id;
     }
 
-    /*public void setId(String id) {
+    public void setId(String id) {
         this.id = id;
-    }*/
+    }
 
     public boolean equals(Media media) {
         if (this.id.equals(media.getId())) {

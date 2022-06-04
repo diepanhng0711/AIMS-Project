@@ -7,13 +7,20 @@ import AimsProject.aims.order.*;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Optional;
 
 public class AimsMainGUIController {
-    ArrayList<Order> anOrder = new ArrayList<Order>();
+    static ArrayList<Order> anOrder = new ArrayList<Order>();
+    static int insertedOrderID = 0;
 
     @FXML
     private Button selection1;
@@ -21,7 +28,7 @@ public class AimsMainGUIController {
     private Button selection2;
 
     //Bắt sự kiện tạo đơn hàng (SELECTION 1)
-    public void addOrder(ActionEvent event) {
+    public void addOrder(ActionEvent event) throws IOException {
         if (Order.getNumberOfOrders() == 5) {
             //Vượt quá số đơn hàng tối đa cho phép (5)
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -45,7 +52,8 @@ public class AimsMainGUIController {
     }
 
     //Bắt sự kiện: Thêm sản phẩm vào đơn hàng (SELECTION 2)
-    public void addMediaProduct(ActionEvent event) {
+    public void addMediaProduct(ActionEvent event) throws IOException {
+        int orderID = 0;
         if (Order.getNumberOfOrders() == 0) {
             //Chưa có đơn hàng nào tồn tại trong hệ thống => báo lỗi
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -62,7 +70,6 @@ public class AimsMainGUIController {
             dialog.setHeaderText("ENTER THE ORDER");
             dialog.setContentText("Order ID (1 - 5): ");
 
-            int orderID = 0;
             Optional<String> result = dialog.showAndWait();
 
             if (result.isPresent()) {
@@ -78,7 +85,19 @@ public class AimsMainGUIController {
 
                     alert.show();
                     } else {
+                        insertedOrderID = orderID;
                         System.out.println("Order ID: " + orderID);
+                        //Chuyển sang scene thêm sản phẩm
+                        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                        FXMLLoader loader = new FXMLLoader();
+                        loader.setLocation(this.getClass().getResource("AddMediaProduct.fxml"));
+
+                        Parent addWindow = loader.load(); //Có thể sử dụng try/catch để bắt IOException
+                        Scene scene = new Scene(addWindow);
+
+                        stage.setTitle("Order " + orderID);
+                        stage.setScene(scene);
                     }
                 }
                 catch (NumberFormatException e) {
@@ -91,6 +110,8 @@ public class AimsMainGUIController {
                     alert1.show();
                 }
             }
+
         }
     }
+
 }

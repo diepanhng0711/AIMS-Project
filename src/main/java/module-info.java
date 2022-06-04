@@ -13,4 +13,10 @@ module com.example.aimsprojectjavafx {
 
     opens AimsProject.main to javafx.fxml;
     exports AimsProject.main;
+
+    opens AimsProject.aims.media to javafx.base;
+    exports AimsProject.aims.media;
+
+    opens AimsProject.aims.disc.track to javafx.base;
+    exports AimsProject.aims.disc.track;
 }

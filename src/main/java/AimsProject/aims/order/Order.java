@@ -21,7 +21,7 @@ public class Order {
 
     //private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBER_ORDERED];
 
-    private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+    public ArrayList<Media> itemsOrdered = new ArrayList<Media>();
 
 
     public Order() {
@@ -51,6 +51,12 @@ public class Order {
 
     public void addMedia(Media media) {
         if (qtyOrdered < MAX_NUMBER_ORDERED) {
+            for (Media item: itemsOrdered) {
+                if (item.getId() == media.getId()) {
+                    System.out.println("This item has already been added to the order!");
+                    return;
+                }
+            }
             itemsOrdered.add(media);
             qtyOrdered++;
             System.out.println("The new media has been added successfully!");
