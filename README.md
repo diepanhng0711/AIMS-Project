@@ -22,6 +22,7 @@ I'm not having enough time to fully develop this application, so I'm using the f
 ## Features
 AIMS-Project is a JavaFX application that illustrate how you to buy and sell media products such as DVD, CD, Book online with these following features:
 <br>
+<br>
 <img src="https://github.com/diepanhng0711/AIMS-Project/blob/main/src/main/resources/AimsProject/main/AIMS_Demo.png">
 + Buy media products: CD, DVD, Book
 + Get lucky media products
